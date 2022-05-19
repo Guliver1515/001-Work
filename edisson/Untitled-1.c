@@ -39,3 +39,73 @@ int main (){
     scanf("%d",&d);
     printf("A distancia entre %s e %s eh de %dkm",cidade[c],cidade[d],distancia[c][d]);
 }
+//atividade b
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+int main(){
+    int a,b,c,d[6][6];
+    printf("IMPRIME TODOS OS ELEMENTOS DA MATRIX:\n");
+    for(a=0;a<6;a++){
+        for (b=0;b<6;b++)
+        {
+            d[a][b] = rand()%100000 + 1;
+            printf("%d\t",d[a][b]);
+            
+        }
+        printf("\n");
+    }
+    printf("\nIMPRIME TODOS OS INDICES DAS POSICOES DA MATRIZ:\n");
+    for(a=0;a<6;a++){
+        for (b=0;b<6;b++){
+            printf("%d%d\t",a,b);
+        }
+        printf("\n");
+    }    
+    printf("IMPRIME TODOS OS ELETOS D DIAGONAL PRINCIPAL:\n");
+    for(a=0;a<6;a++){
+        printf("%d\t",d[a][a]);
+    }
+    printf("\nIMPRIME TODOS OS ELEMENTOS DA DIAGONAL PRINCIPAL:\n");
+    for(a=0;a<6;a++){
+
+        printf("\n"); 
+        
+        for (b=0;b<a;b++)
+        {
+           printf("\t"); 
+        }
+        printf("%d",d[a][a]);
+    }
+    printf("\nIMPRIME TODOS OS ELEMENTOS DA DIAGONAL PRINCIPAL E ZERO NAS DEMAIS\n");
+    for(a=0;a<6;a++){
+        for(b=0;b<6;b++){
+            if (a==b)
+            {
+                printf("%d\t",d[a][b]);
+            }
+            else{
+                printf(  "0\t");
+            }
+             
+        }
+        printf("\n");
+    }
+    printf("IMPRIME TODOS OS ELEMENTOS ACIMA DA DIAGONAL PRINCIPAL\n");
+    for(a=0;a<6;a++){
+        for(b=0;b<6;b++){
+            if(b<=a)
+            {
+                printf("\t");
+            }
+            else{
+                printf("%d\t",d[a][b]);
+            }
+            
+        }
+        printf("\n");
+    }
+    
+}
