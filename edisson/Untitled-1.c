@@ -2,9 +2,13 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<conio.h>
+#include<string.h>
     //#define CIDADES 4
-   char cidade[4][12] = {"BELÉM", "FORTALEZA", "MANAUS",
-"PORTO VELHO"};
+   char cidade[4][13] = {
+       "BELÉM      ", 
+       "FORTALEZA  ", 
+       "MANAUS     ",
+       "PORTO VELHO"};
     int distancia[4][4] =
  { {0,1611,5298,4397},
  {1611,0,5763,4865},
@@ -15,6 +19,9 @@
 
 int main (){
     int a, b,c,d;
+    for(a=0;a<4;a++){
+        printf("%ld\n",strlen(cidade[a]));
+    }
     
     printf("\tTabela De distancias\n");
     printf("=======================================================\n");
@@ -22,7 +29,7 @@ int main (){
     printf("=======================================================\n");
     for(a=0;a<4;a++){
         for(b=0;b<4;b++){
-            printf("\t%s\t\t%s\t\t%d\n", cidade[a],cidade[b],distancia[a][b]);
+            printf("\t%s\t%s\t%d\n", cidade[a],cidade[b],distancia[a][b]);
         }
     }
     printf("\nCodigos das cidades\n===================\n0-BELEM\n1-FORTALEZA\n2-MANAUS\n3-PORTO VELHO\n");
